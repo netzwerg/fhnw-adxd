@@ -11,7 +11,7 @@
 
 # Präsentation
 
-http://netzwerg.ch/fhnw-adxd[HTML] http://netzwerg.ch/fhnw-adxd/fhnw-adxd-slides-03102016.pdf[PDF]
+http://netzwerg.ch/fhnw-adxd[HTML] http://netzwerg.ch/fhnw-adxd/fhnw-adxd-03102016.pdf[PDF]
 
 Asciidoc dazu im Unterprojekt `slides`
 
