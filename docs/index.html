@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><title>UX Design und UI Engineering – Technische Umsetzungsstrategien von Custom User Interface Elements</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/netzwerg.css" id="theme" /><link rel="stylesheet" href="./font-awesome.css" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section id="_ux_design_und_ui_engineering_technische_umsetzungsstrategien_von_custom_user_interface_elements"><h2>UX Design und UI Engineering – Technische Umsetzungsstrategien von Custom User Interface Elements</h2><div class="paragraph"><p>Advanced Experience Design · FHNW<br /></p></div>
+<div class="paragraph"><p>Rahel Lüthy<br />
+3. Oktober 2016</p></div>
+<div class="imageblock thumb" style="text-align: right"><img src="./images/lego-lhc.png" alt="lego lhc" width="30%" /></div></section>
+<section id="_hausaufgabe"><h2>Hausaufgabe</h2><div class="imageblock thumb" style=""><img src="./images/rating.gif" alt="rating" width="80%" /></div></section>
+<section id="_lernziele"><h2>Lernziele</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Spektrum von Custom UI Elementen</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Herausforderungen</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Umsetzungsstrategien / Lösungskonzepte</p></div>
+<div class="imageblock thumb" style="text-align: right"><img src="./images/javafx-logo.png" alt="javafx logo" width="40%" /></div></section>
+<section id="_ablauf"><h2>Ablauf</h2><div class="paragraph"><p><span class="solarized-green"><span class="icon"><i class="fa fa-refresh fa-fw"></i></span> Auffrischung JavaFX</span></p></div>
+<div class="paragraph"><p><span class="solarized-blue"><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Diskussion &amp; Code</span></p></div>
+<div class="paragraph"><p><span class="solarized-violet"><span class="icon"><i class="fa fa-list-ol fa-fw"></i></span> Hausaufgabe</span></p></div>
+<div class="paragraph"><p><br /></p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-question fa-fw"></i></span> Fragen jederzeit</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-lightbulb-o fa-fw"></i></span> Präsentation &amp; Code werden zur Verfügung gestellt</p></div></section>
+<section id="_rahel_lthy" data-background-image="./images/github.png"><h2>Rahel Lüthy</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-graduation-cap fa-fw"></i></span> MSc Biologie, Uni Basel</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-code fa-fw"></i></span> 20 Jahre Software Entwicklung (Java, Scala)</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-medkit fa-fw"></i></span> Biomedizinische Informatik, HLS (FHNW Muttenz)</p></div>
+<div class="paragraph"><p><br /></p></div></section>
+<section id="_ablauf_2"><h2>Ablauf</h2><div class="paragraph"><p><span class="solarized-green"><strong><span class="icon"><i class="fa fa-refresh fa-fw"></i></span> Auffrischung JavaFX</strong></span></p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Diskussion &amp; Code</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-list-ol fa-fw"></i></span> Hausaufgabe</p></div>
+<div class="imageblock thumb" style="text-align: right"><img src="./images/javafx-logo.png" alt="javafx logo" width="40%" /></div></section>
+<section id="_javafx_hello_world"><h2>JavaFX Hello World</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">public void start(Stage stage) {
+    Circle circle = new Circle(100, Color.ORANGE);
+    Button button = new Button("Click Me");
+
+    Pane layoutContainer = new StackPane(circle, button);
+
+    Scene scene = new Scene(layoutContainer);
+    stage.setScene(scene);
+
+    stage.setWidth(WIDTH);
+    stage.setHeight(HEIGHT);
+    stage.setTitle("JavaFX Hello World");
+    stage.show();
+}</code></pre></div></div></section>
+<section id="_javafx_hello_world_2"><h2>JavaFX Hello World</h2><div class="imageblock thumb" style=""><img src="./images/hello-world.png" alt="hello world" width="70%" /></div></section>
+<section id="_scene_graph"><h2>Scene Graph</h2><div class="imageblock thumb" style=""><img src="./images/scene-graph.png" alt="scene graph" width="100%" /></div></section>
+<section id="_javafx_klassenhierarchie" data-transition="fade" data-background-image="./images/javafx-components.png" data-background-size="97%"><h2>JavaFX Klassenhierarchie</h2></section>
+<section id="_javafx_klassenhierarchie_2" data-transition="fade" data-background-image="./images/javafx-components-grouped.png" data-background-size="97%"><h2>JavaFX Klassenhierarchie</h2></section>
+<section id="_ablauf_3"><h2>Ablauf</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-refresh fa-fw"></i></span> Auffrischung JavaFX</p></div>
+<div class="paragraph"><p><span class="solarized-blue"><strong><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Diskussion &amp; Code</strong></span></p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-list-ol fa-fw"></i></span> Hausaufgabe</p></div></section>
+<section id="_custom_ui_elemente"><h2>Custom UI Elemente</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Was kann an einem UI Element "custom" sein?</p></div>
+<div class="paragraph"><p><br />
+<br />
+<br /></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-styling.png" alt="lego styling" width="20%" /></span> <span class="image"><img src="./images/lego-composition.png" alt="lego composition" width="20%" /></span> <span class="image"><img src="./images/lego-interaction.png" alt="lego interaction" width="20%" /></span></p></div></section>
+<section id="_custom_auf_welchem_level" class="img-right" data-background-image="./images/lego-castle.png" data-background-size="30%"><h2>Custom auf welchem Level?</h2><div class="paragraph thumb"><p><span class="image"><img src="./images/lego-styling.png" alt="lego styling" width="15%" /></span> <span class="vertical-align-middle">&#160;&#160;Erscheinung</span></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-composition.png" alt="lego composition" width="15%" /></span> <span class="vertical-align-middle">&#160;&#160;Zusammensetzung</span></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-interaction.png" alt="lego interaction" width="15%" /></span> <span class="vertical-align-middle">&#160;&#160;Interaktivität</span></p></div></section>
+<section id="_wie_mit_javafx_umsetzen" data-transition="fade" data-transition-speed="slow"><h2>Wie mit JavaFX umsetzen?</h2><div class="paragraph thumb"><p><span class="image"><img src="./images/lego-styling.png" alt="lego styling" width="15%" /></span> <span class="vertical-align-middle">&#160;&#160;Erscheinung ("Styling")</span> <span class="fragment vertical-align-middle solarized-green">&#160;<strong>CSS</strong></span></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-composition.png" alt="lego composition" width="15%" /></span> <span class="vertical-align-middle">&#160;&#160;Zusammensetzung ("Composition")</span> <span class="fragment vertical-align-middle solarized-blue">&#160;<strong>Scene Graph</strong></span></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-interaction.png" alt="lego interaction" width="15%" /></span>  <span class="vertical-align-middle">&#160;&#160;Interaktivität</span> <span class="fragment vertical-align-middle solarized-violet">&#160;<strong>Properties, Listeners, Bindings</strong></span></p></div></section>
+<section id="_eine_custom_komponente"><h2>Eine Custom Komponente</h2><div class="imageblock thumb" style=""><img src="./images/custom-component.png" alt="custom component" width="30%" /></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Wie mit JavaFX umsetzen?</p></div></section>
+<section id="_gibt_es_diese_komponente_schon" data-background-image="./images/javafx-components-grouped.png" data-background-size="90%"><h2>Gibt es diese Komponente schon?</h2></section>
+<section id="_so_einfach_wie_mglich"><h2>So einfach wie möglich</h2><div class="paragraph"><p>CustomComponent.java:</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">public class CustomComponent extends Region {
+
+    public CustomComponent() {
+        getStyleClass().setAll("custom-component");
+    }
+
+    @Override
+    public String getUserAgentStylesheet() {
+        return CustomComponent.class.getResource("custom-component.css").toExternalForm();
+    }
+
+}</code></pre></div></div>
+<div class="paragraph"><p>custom-component.css:</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="css language-css">.custom-component {
+    -fx-shape: "M20.388,10.918L32,12.118l-8.735,7.749L25.914,31.4l-9.893-6.088L6.127,31.4l2.695-11.533L0,12.118 l11.547-1.2L16.026,0.6L20.388,10.918z";
+    -fx-background-color: gold;
+}</code></pre></div></div></section>
+<section id="_wiederverwendbarkeit_span_class_icon_i_class_fa_fa_check_fa_fw_i_span"><h2>Wiederverwendbarkeit <span class="icon"><i class="fa fa-check fa-fw"></i></span></h2><div class="paragraph thumb"><p><span class="image"><img src="./images/heart-component.png" alt="heart component" width="30%" /></span></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="css language-css">.custom-component {
+  -fx-shape: "M318.2,259.5c-7.5,0-14.2,3.7-18.2,9.5c-4-5.7-10.7-9.5-18.2-9.5 c-12.3,0-22.3,10-22.3,22.3c0,30.4,31.6,58.7,40.5,58.7s40.5-28.4,40.5-58.7C340.5,269.5,330.5,259.5,318.2,259.5z";
+  -fx-background-color: #E2264D;
+}</code></pre></div></div></section>
+<section id="_spider" data-background-image="./images/spider-component.png" data-background-size="100%"><h2>Spider</h2></section>
+<section id="_spider_umsetzungsstrategien"><h2>Spider: Umsetzungsstrategien</h2><div class="ulist"><ul><li><p>Styling <span class="solarized-green right"><strong>CSS oder programmatisch</strong></span>
+<br />
+<br /></p></li><li><p>Composition <span class="solarized-blue right"><strong>Circle, Line, Group</strong></span>
+<br />
+<br /></p></li><li><p>Interaktivität <span class="solarized-violet right"><strong>setOnMouseMoved</strong></span><br />
+<span class="solarized-violet right"><strong>SimpleIntegerProperty</strong></span><br />
+<span class="solarized-violet right"><strong>bind</strong></span></p></li></ul></div></section>
+<section id="_xplan" class="img-right" data-background-image="./images/xplan-baz.png" data-background-size="33%"><h2>xPlan</h2><div class="paragraph"><p>Aktuelles HLS Forschungsprojekt</p></div>
+<div class="ulist"><ul><li><p>Inselspital Bern</p></li><li><p>Unispital Basel</p></li></ul></div>
+<div class="paragraph"><p>Patientenströme in <strong>JavaFX 3D</strong></p></div></section>
+<section id="_inselspital_bern" data-background-image="./images/xplan-3d.gif" data-background-size="70%"></section>
+<section id="_ablauf_4"><h2>Ablauf</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-refresh fa-fw"></i></span> Auffrischung JavaFX</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-comments-o fa-fw"></i></span> Diskussion &amp; Code</p></div>
+<div class="paragraph"><p><span class="solarized-violet"><strong><span class="icon"><i class="fa fa-list-ol fa-fw"></i></span> Hausaufgabe</strong></span></p></div>
+<div class="paragraph"><p><br />
+<br /></p></div>
+<div class="imageblock thumb" style="text-align: center"><img src="./images/programming-is-hard.png" alt="programming is hard" width="80%" /></div></section>
+<section id="_hausaufgabe_2" class="img-right"><h2>Hausaufgabe</h2><div class="imageblock thumb" style=""><img src="./images/rating.gif" alt="rating" width="50%" /></div>
+<div class="ulist"><ul><li><p>RatingApp <span class="solarized-green"><span class="icon"><i class="fa fa-check fa-fw"></i></span></span></p></li><li><p>ToggleComponent <span class="solarized-green"><span class="icon"><i class="fa fa-check fa-fw"></i></span></span></p></li><li><p>RatingComponent <span class="solarized-blue">&#160;<strong>TODO</strong></span></p></li></ul></div></section>
+<section id="_lernziel_1"><h2>Lernziel 1</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Spektrum von Custom UI Elements</p></div>
+<div class="ulist"><ul><li><p>Styling</p></li><li><p>Zusammensetzung</p></li><li><p>Interaktivität</p></li></ul></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/lego-styling.png" alt="lego styling" width="20%" /></span> <span class="image"><img src="./images/lego-composition.png" alt="lego composition" width="20%" /></span> <span class="image"><img src="./images/lego-interaction.png" alt="lego interaction" width="20%" /></span></p></div></section>
+<section id="_lernziel_2" class="img-right" data-background-image="./images/monument-valley-goal.png" data-background-size="15%"><h2>Lernziel 2</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Herausforderungen</p></div>
+<div class="ulist"><ul><li><p>Standardbibliothek kennen</p></li><li><p>Viele Wege führen nach Rom</p></li><li><p>So einfach wie möglich</p></li></ul></div></section>
+<section id="_lernziel_3" class="img-right" data-background-image="./images/lego-castle.png" data-background-size="20%"><h2>Lernziel 3</h2><div class="paragraph"><p><span class="icon"><i class="fa fa-check-square-o fa-fw"></i></span> Umsetzungsstrategien / Lösungskonzepte</p></div>
+<div class="ulist"><ul><li><p>CSS</p></li><li><p>Composition &amp; Inheritance</p></li><li><p>Properties, Listeners, Bindings</p></li></ul></div></section>
+<section id="github"><h2>Code &amp; Präsentation</h2><div class="paragraph"><p><br />
+<span class="icon"><i class="fa fa-github fa-fw"></i></span><a href="https://github.com/netzwerg/fhnw-adxd" class="bare">https://github.com/netzwerg/fhnw-adxd</a></p></div>
+<div class="paragraph"><p><br /></p></div>
+<div class="paragraph thumb"><p><span class="image"><img src="./images/readme-1.png" alt="readme 1" width="49%" /></span> <span class="image"><img src="./images/readme-2.png" alt="readme 2" width="49%" /></span></p></div></section>
+<section id="_addendum_javafx_animations"><h2>Addendum: JavaFX Animations</h2><div class="paragraph thumb"><p><span class="image"><img src="./images/moving-circle.gif" alt="moving circle" width="60%" /></span></p></div></section>
+<section id="_addendum_javafx_animations_2"><h2>Addendum: JavaFX Animations</h2><div class="paragraph thumb"><p><span class="image"><img src="./images/moving-circles.gif" alt="moving circles" width="60%" /></span></p></div></section>
+<section id="_addendum_xplan_spring_force_layout"><h2>Addendum: xPlan Spring Force Layout</h2><div class="paragraph thumb"><p><span class="image"><img src="./images/xplan-spring.png" alt="xplan spring" width="60%" /></span></p></div></section>
+<section id="_the_large_hadron_collider"><h2>The Large Hadron Collider</h2><div class="paragraph"><p><a href="https://ideas.lego.com/projects/94885" class="bare">https://ideas.lego.com/projects/94885</a></p></div>
+<div class="imageblock thumb" style=""><img src="./images/lego-lhc.png" alt="lego lhc" /></div></section>
+<section id="_danke"><h2>Danke</h2><div class="paragraph bigger"><p><span class="icon"><i class="fa fa-github fa-fw"></i></span><a href="https://github.com/netzwerg/fhnw-adxd" class="bare">https://github.com/netzwerg/fhnw-adxd</a></p></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: false,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: false,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'netzwerg',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'linear',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>

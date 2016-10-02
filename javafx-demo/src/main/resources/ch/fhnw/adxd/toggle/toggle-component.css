@@ -1,0 +1,11 @@
+.custom-component {
+    -fx-shape: "M318.2,259.5c-7.5,0-14.2,3.7-18.2,9.5c-4-5.7-10.7-9.5-18.2-9.5 c-12.3,0-22.3,10-22.3,22.3c0,30.4,31.6,58.7,40.5,58.7s40.5-28.4,40.5-58.7C340.5,269.5,330.5,259.5,318.2,259.5z";
+    -fx-background-color: darkgrey;
+    -fx-scale-shape: true;
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+}
+
+.custom-component:selected {
+    -fx-background-color: #E2264D;
+}

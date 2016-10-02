@@ -1,0 +1,45 @@
+# Lektion
+
+[cols="2, 10"]
+|===
+|**Titel**|UX Design und UI Engineering – Technische Umsetzungsstrategien von Custom User Interface Elements
+|**Dozentin**|Rahel Lüthy
+|**Datum**|Montag, 3. Oktober 2016
+|**Klasse**|Bachelor-Studiengang Informatik, Profilierung iCompetence, 5. Semester
+|**Modul**|Advanced Experience Design (adxd)
+|===
+
+# Präsentation
+
+http://netzwerg.ch/fhnw-adxd[HTML] http://netzwerg.ch/fhnw-adxd/fhnw-adxd-slides-03102016.pdf[PDF]
+
+Asciidoc dazu im Unterprojekt `slides`
+
+# Code
+
+Alle Code Beispiele befinden sich im Unterprojekt `javafx-demo`:
+
+`custom` "Gelber Stern"::
+* Einfaches Styling mittels CSS
+`spider` "Krabbelnde Spinne"::
+* Composition von bestehenden `Circle` und `Line` Klassen
+* Maus Interaktion
+* Property Binding (Beinlänge mittels Slider kontrollierbar)
+`toggle` "Rotes/Graues Herz"::
+* Zwei Selektionszustände
+* Toggling via Maus oder Property
+* Styling mittels CSS Pseudo-Klasse
+`rating` "Hausaufgabe"::
+* `RatingApp`: Demo-Setup inkl. Slider
+* `RatingComponent`: **TODO**
+`animation` "Bewegende Kreise"::
+* Demonstriert `AnimationTimer`
+
+# Credits
+
+* https://github.com/asciidoctor/asciidoctor-reveal.js[Asciidoctor/Reveal.js (Slides)]
+* https://github.com/astefanutti/decktape[Decktape (PDF)]
+* http://ldd.lego.com[Lego Digital Designer]
+* http://fhnw-biomedinf.github.io/prog-II/doc/html/#_custom_drawing_with_a_canvas[Dominique Brodbeck: Spider]
+* https://dzone.com/refcardz/javafx-8-1[DZone: JavaFX 8]
+* https://youtu.be/L9xtOhdSx6k[Jonathan Giles: Building Custom JavaFX Controls]

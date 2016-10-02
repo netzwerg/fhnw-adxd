@@ -1,0 +1,306 @@
+:space: pass:[ +]
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+:iconfont-remote!:
+
+== UX Design und UI Engineering – Technische Umsetzungsstrategien von Custom User Interface Elements
+
+Advanced Experience Design · FHNW +
+
+Rahel Lüthy +
+3. Oktober 2016
+
+[.thumb]
+image::lego-lhc.png[align="right", width="30%"]
+
+== Hausaufgabe
+
+[.thumb]
+image::rating.gif[width=80%]
+
+== Lernziele
+
+icon:check-square-o[fw] Spektrum von Custom UI Elementen
+
+icon:check-square-o[fw] Herausforderungen
+
+icon:check-square-o[fw] Umsetzungsstrategien / Lösungskonzepte
+
+[.thumb]
+image::javafx-logo.png[align="right", width="40%"]
+
+== Ablauf
+
+[solarized-green]#icon:refresh[fw] Auffrischung JavaFX#
+
+[solarized-blue]#icon:comments-o[fw] Diskussion & Code#
+
+[solarized-violet]#icon:list-ol[fw] Hausaufgabe#
+
+{space}
+
+icon:question[fw] Fragen jederzeit
+
+icon:lightbulb-o[fw] Präsentation & Code werden zur Verfügung gestellt
+
+== Rahel Lüthy
+
+icon:graduation-cap[fw] MSc Biologie, Uni Basel
+
+icon:code[fw] 20 Jahre Software Entwicklung (Java, Scala)
+
+icon:medkit[fw] Biomedizinische Informatik, HLS (FHNW Muttenz)
+
+{space}
+
+image::github.png[background]
+
+== Ablauf
+
+[solarized-green]#**icon:refresh[fw] Auffrischung JavaFX**#
+
+icon:comments-o[fw] Diskussion & Code
+
+icon:list-ol[fw] Hausaufgabe
+
+[.thumb]
+image::javafx-logo.png[align="right", width="40%"]
+
+== JavaFX Hello World
+
+[source,java,indent=0]
+----
+include::../../../../javafx-demo/src/main/java/ch/fhnw/adxd/HelloWorldApp.java[tags=hello-world]
+----
+
+== JavaFX Hello World
+
+[.thumb]
+image::hello-world.png[width=70%]
+
+== Scene Graph
+
+[.thumb]
+image::scene-graph.png[width=100%]
+
+[transition=fade]
+== JavaFX Klassenhierarchie
+
+image::javafx-components.png[background, size=97%]
+
+[transition=fade]
+== JavaFX Klassenhierarchie
+
+image::javafx-components-grouped.png[background, size=97%]
+
+== Ablauf
+
+icon:refresh[fw] Auffrischung JavaFX
+
+[solarized-blue]#**icon:comments-o[fw] Diskussion & Code**#
+
+icon:list-ol[fw] Hausaufgabe
+
+== Custom UI Elemente
+
+icon:comments-o[fw] Was kann an einem UI Element "custom" sein?
+
+{space}
+{space}
+{space}
+
+[.thumb]
+image:lego-styling.png[width=20%] image:lego-composition.png[width=20%] image:lego-interaction.png[width=20%]
+
+[.img-right]
+== Custom auf welchem Level?
+
+[.thumb]
+image:lego-styling.png[width=15%] [.vertical-align-middle]#{nbsp}{nbsp}Erscheinung#
+
+[.thumb]
+image:lego-composition.png[width=15%] [.vertical-align-middle]#{nbsp}{nbsp}Zusammensetzung#
+
+[.thumb]
+image:lego-interaction.png[width=15%] [.vertical-align-middle]#{nbsp}{nbsp}Interaktivität#
+
+image::lego-castle.png[background, size="30%"]
+
+[transition=fade, transition-speed=slow]
+== Wie mit JavaFX umsetzen?
+
+[.thumb]
+image:lego-styling.png[width=15%] [.vertical-align-middle]#{nbsp}{nbsp}Erscheinung ("Styling")# [.fragment.vertical-align-middle.solarized-green]#{nbsp}**CSS**#
+
+[.thumb]
+image:lego-composition.png[width=15%] [.vertical-align-middle]#{nbsp}{nbsp}Zusammensetzung ("Composition")# [.fragment.vertical-align-middle.solarized-blue]#{nbsp}**Scene Graph**#
+
+[.thumb]
+image:lego-interaction.png[width=15%]  [.vertical-align-middle]#{nbsp}{nbsp}Interaktivität# [.fragment.vertical-align-middle.solarized-violet]#{nbsp}**Properties, Listeners, Bindings**#
+
+== Eine Custom Komponente
+
+[.thumb]
+image::custom-component.png[width=30%]
+
+icon:comments-o[fw] Wie mit JavaFX umsetzen?
+
+== Gibt es diese Komponente schon?
+
+image::javafx-components-grouped.png[background, size=90%]
+
+== So einfach wie möglich
+
+CustomComponent.java:
+[source,java,indent=0]
+----
+include::../../../../javafx-demo/src/main/java/ch/fhnw/adxd/custom/CustomComponent.java[tags=custom-component]
+----
+custom-component.css:
+[source,css,indent=0]
+----
+include::../../../../javafx-demo/src/main/resources/ch/fhnw/adxd/custom/custom-component.css[]
+----
+
+== Wiederverwendbarkeit icon:check[fw]
+
+[.thumb]
+image:heart-component.png[width=30%]
+
+[source,css,indent=0]
+----
+.custom-component {
+  -fx-shape: "M318.2,259.5c-7.5,0-14.2,3.7-18.2,9.5c-4-5.7-10.7-9.5-18.2-9.5 c-12.3,0-22.3,10-22.3,22.3c0,30.4,31.6,58.7,40.5,58.7s40.5-28.4,40.5-58.7C340.5,269.5,330.5,259.5,318.2,259.5z";
+  -fx-background-color: #E2264D;
+}
+----
+
+== Spider
+
+image::spider-component.png[background, size="100%"]
+
+== Spider: Umsetzungsstrategien
+
+* Styling [.solarized-green.right]#**CSS oder programmatisch**#
+{space}
+{space}
+* Composition [.solarized-blue.right]#**Circle, Line, Group**#
+{space}
+{space}
+* Interaktivität [.solarized-violet.right]#**setOnMouseMoved**# +
+[.solarized-violet.right]#**SimpleIntegerProperty**# +
+[.solarized-violet.right]#**bind**#
+
+[.img-right]
+== xPlan
+
+Aktuelles HLS Forschungsprojekt
+
+* Inselspital Bern
+* Unispital Basel
+
+Patientenströme in **JavaFX 3D**
+
+[.thumb]
+image::xplan-baz.png[background, size="33%"]
+
+[%notitle]
+== Inselspital Bern
+
+[.thumb]
+image::xplan-3d.gif[background, size="70%"]
+
+== Ablauf
+
+icon:refresh[fw] Auffrischung JavaFX
+
+icon:comments-o[fw] Diskussion & Code
+
+[solarized-violet]#**icon:list-ol[fw] Hausaufgabe**#
+
+{space}
+{space}
+
+[.thumb]
+image::programming-is-hard.png[align="center", width="80%"]
+
+[.img-right]
+== Hausaufgabe
+
+[.thumb]
+image::rating.gif[width="50%"]
+
+* RatingApp [.solarized-green]#icon:check[fw]#
+* ToggleComponent [.solarized-green]#icon:check[fw]#
+* RatingComponent [.solarized-blue]#{nbsp}**TODO**#
+
+== Lernziel 1
+
+icon:check-square-o[fw] Spektrum von Custom UI Elements
+
+* Styling
+* Zusammensetzung
+* Interaktivität
+
+[.thumb]
+image:lego-styling.png[width=20%] image:lego-composition.png[width=20%] image:lego-interaction.png[width=20%]
+
+[.img-right]
+== Lernziel 2
+
+icon:check-square-o[fw] Herausforderungen
+
+* Standardbibliothek kennen
+* Viele Wege führen nach Rom
+* So einfach wie möglich
+
+image::monument-valley-goal.png[background, size="15%"]
+
+[.img-right]
+== Lernziel 3
+
+icon:check-square-o[fw] Umsetzungsstrategien / Lösungskonzepte
+
+* CSS
+* Composition & Inheritance
+* Properties, Listeners, Bindings
+
+image::lego-castle.png[background, size="20%"]
+
+[[github]]
+== Code & Präsentation
+
+{space}
+icon:github[fw]https://github.com/netzwerg/fhnw-adxd
+
+{space}
+
+[.thumb]
+image:readme-1.png[align="left",width="49%"] image:readme-2.png[align="right", width="49%"]
+
+== Addendum: JavaFX Animations
+
+[.thumb]
+image:moving-circle.gif[width="60%"]
+
+== Addendum: JavaFX Animations
+
+[.thumb]
+image:moving-circles.gif[width="60%"]
+
+== Addendum: xPlan Spring Force Layout
+
+[.thumb]
+image:xplan-spring.gif[]
+
+== The Large Hadron Collider
+
+https://ideas.lego.com/projects/94885
+
+[.thumb]
+image::lego-lhc.png[]
+
+== Danke
+
+[.bigger]
+icon:github[fw]https://github.com/netzwerg/fhnw-adxd

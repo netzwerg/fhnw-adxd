@@ -1,0 +1,11 @@
+.custom-control {
+    -fx-shape: "M 25,60 a 20,20 1 0,0 0,40 h 50 a 20,20 1 0,0 0,-40 a 10,10 1 0,0 -15,-10 a 15,15 1 0,0 -35,10 z";
+    -fx-background-color: darkgrey;
+    -fx-scale-shape: true;
+    -fx-pref-width: 550;
+    -fx-pref-height: 350;
+}
+
+.custom-control:selected {
+    -fx-background-color: dodgerblue;
+}
